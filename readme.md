@@ -1,48 +1,25 @@
-# ⭐⭐ Give a star if you are helped by this repo 🙏⭐⭐
-# Happy Birthday
+# 🌸 Đóa Hoa Dành Cho Yến Nhi (10/09/2004)
 
-<img width="1920" height="881" alt="preview" src="https://github.com/user-attachments/assets/264fa78c-3edb-48ca-9f4a-2816e92e3d72" />
+> Một câu chuyện Chibi dịu dàng và lời chúc sinh nhật ý nghĩa nhất dành cho Yến Nhi.
 
+🌐 **Website Demo / Trực tiếp:** [https://nhimxu00.github.io/yennhixinhdep/](https://nhimxu00.github.io/yennhixinhdep/)
 
-## A Happy Birthday animation design in CSS3, HTML5.
+---
 
-URL: http://tiny.cc/brthday-web
+## ✨ Điểm nổi bật
+- 📖 **Hành trình 5 chương truyện Chibi:** Đồng cảm, vỗ về và trân trọng sự im lặng cũng như ranh giới của đóa hoa nhỏ.
+- 💡 **Dàn đèn lung linh (Classic Feature):** Tương tác bật/tắt chuỗi đèn cổ vũ ấm áp.
+- 🎵 **Giai điệu sinh nhật du dương:** Nhạc nền nhẹ nhàng cùng bộ điều khiển âm thanh mượt mà.
+- 🎈 **Thả bóng bay chữ:** Dãy bóng bay pastel mang tên **Y - Ê - N - N - H - I** và **10 · 09 · 2004**.
+- 💧 **Khu vườn tương tác:** Chạm bình tưới gửi 4 điều ước, nụ hoa bung nở từ đêm trăng sang bình minh rực rỡ.
+- 🎂 **Bánh kem 3D & Thổi nến:** Chạm để thổi tắt nến, khói bay, pháo hoa giấy (confetti) bùng nổ cùng thiệp chúc mừng.
+- 💌 **Lá thư tay niêm phong sáp:** Mở lá thư trải lòng chân thành gửi riêng em.
+- 📱 **Responsive toàn diện:** Hiển thị tuyệt đẹp trên cả điện thoại và máy tính.
 
-Technology Used: HTML5 CSS3 jQuery
+---
 
-## UPDATE V.2
-- Reorganized Files, assets, css, js.
-- Added an album which contains all photos with your love one.
-- Added zoom to album photos.
-- Improved UI.
-- Changed font.
-- Fixed Bug.
-
-You can find the legacy codes on https://github.com/Shizu-ka/Birthday-Website/tree/legacy
-
-## Future Plan
-- idk maybe make the website responsive or just block usage on mobile.
-
-## FAQ
-### How can i change the picture?
-```
-Just change person.png or photos1-4 in assets/images in the directory to any picture you want. 
-Don't forget to resize your image to 490x435 px for person.png and 1920x1080 for album photos.jpg.
-```
-### How can i change the alphabet on the baloons?
-```
-Just go to index.html and change all the alphabets you want 
-```
-### How can i change the messages?
-```
-Just go to index.html and change all the messages you want 
-```
-
-### LICENSE
-<a href="https://creativecommons.org/licenses/by-nc/4.0/">
-  <img width="700" height="189" alt="image" src="https://github.com/user-attachments/assets/079a8923-befa-4be8-be7a-7cbbc7500b5b" />
-</a>
-<a href="https://creativecommons.org/licenses/by-nc/4.0/">
-  <img width="700" height="497" alt="image" src="https://github.com/user-attachments/assets/126d922d-2255-4699-bc8a-355e2b3195d2" />
-</a>
-
+## 🛠️ Công nghệ sử dụng
+- **HTML5 & Vanilla CSS3** (Custom Design System, Pastel Color Tokens, Animations)
+- **Modern Vanilla JavaScript** (Web Audio API Synthesizer, Embedded Canvas Confetti Engine, DOM Interactions)
+- **Google Fonts Vietnamese** (Be Vietnam Pro, Comfortaa, Caveat, Quicksand)
+- **Hosting:** GitHub Pages

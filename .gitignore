@@ -1,0 +1,7 @@
+# Temporary test chrome profiles
+.chrome-*
+
+# Temporary QA scripts and screenshots
+.qa/
+qa-*.png
+preview-*.png

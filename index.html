@@ -1,501 +1,451 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
-<!--[if gt IE 8]> <html> <![endif]-->
-<!--[if !IE]><!--><html lang="en"><!-- <![endif]-->
+<!doctype html>
+<html lang="vi">
 <head>
-	<title>Happy Birthday</title>
-	<meta charset="UTF-8" />
-	<meta name="description" content="Happy Birthday Anggie">
-	<meta name="robots" content="index, follow" />
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-	<link rel="author" href="alex" /> 
-    <meta name="keywords" content="Birthday, Happy">
-
-    <!-- Strat of Facebook Meta -->
-    <meta property="og:type" content="E-Greeting" />
-    <meta property="og:image" content="favicon.ico" />
-    <meta property="og:description" content="Wish you a very Happy Birthday">
-    <!-- End of Facebook Meta Tags -->
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="css/loading.css">
-	<link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'> -->
-	<link rel="stylesheet/less" href="cake.less"> 
-	<style type="text/css" id="less:birthday-cake">
-    
-    /* ============================================== POSITION
-*/
-.cake {
-  position: absolute;
-  display: none;
-  left: 50%;
-  margin-left: -150px;
-  width: 300px;
-  height: 300px;
-}
-/* ============================================== BASE
-*/
-.cake:after {
-  background: #ffffff;
-  border-radius: 300px;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 300px;
-  height: 6px;
-}
-/* ============================================== Candle
-*/
-.velas {
-  background: #ffffff;
-  border-radius: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -7.5px;
-  margin-top: -25px;
-  width: 15px;
-  height: 50px;
-}
-.velas:after,
-.velas:before {
-  background: rgba(255, 0, 0, 0.4);
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 6.66666667px;
-}
-.velas:after {
-  top: 25%;
-  left: 0;
-}
-.velas:before {
-  top: 45%;
-  left: 0;
-}
-/* ============================================== Fire
-*/
-.fuego {
-  display: none;
-  border-radius: 100%;
-  box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  margin-left: -10px;
-  width: 20px;
-  height: 37.5px;
-}
-.fuego:nth-child(1) {
-  -webkit-animation: fuego 2s infinite;
-  -moz-animation: fuego 2s infinite;
-  -o-animation: fuego 2s infinite;
-  -ms-animation: fuego 2s infinite;
-  animation: fuego 2s infinite;
-}
-.fuego:nth-child(2) {
-  -webkit-animation: fuego 1.5s infinite;
-  -moz-animation: fuego 1.5s infinite;
-  -o-animation: fuego 1.5s infinite;
-  -ms-animation: fuego 1.5s infinite;
-  animation: fuego 1.5s infinite;
-}
-.fuego:nth-child(3) {
-  -webkit-animation: fuego 1s infinite;
-  -moz-animation: fuego 1s infinite;
-  -o-animation: fuego 1s infinite;
-  -ms-animation: fuego 1s infinite;
-  animation: fuego 1s infinite;
-}
-.fuego:nth-child(4) {
-  -webkit-animation: fuego 0.5s infinite;
-  -moz-animation: fuego 0.5s infinite;
-  -o-animation: fuego 0.5s infinite;
-  -ms-animation: fuego 0.5s infinite;
-  animation: fuego 0.5s infinite;
-}
-.fuego:nth-child(5) {
-  -webkit-animation: fuego 0.2s infinite;
-  -moz-animation: fuego 0.2s infinite;
-  -o-animation: fuego 0.2s infinite;
-  -ms-animation: fuego 0.2s infinite;
-  animation: fuego 0.2s infinite;
-}
-/* ============================================== Animation Fire
-*/
-@-webkit-keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    -webkit-transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    -webkit-transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    -webkit-transform: translateY(0) scale(1);
-  }
-}
-@-moz-keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    -moz-transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    -moz-transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    -moz-transform: translateY(0) scale(1);
-  }
-}
-@-o-keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    -o-transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    -o-transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    -o-transform: translateY(0) scale(1);
-  }
-}
-@-ms-keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    -ms-transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    -ms-transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    -ms-transform: translateY(0) scale(1);
-  }
-}
-@keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    transform: translateY(-60px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    transform: translateY(0) scale(1);
-  }
-}
-/* ============================================== Frosting
-*/
-.cobertura {
-  background: #ece7e3;
-  border-radius: 150px;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  margin-left: -83.33333333px;
-  margin-top: -15px;
-  width: 166.66666667px;
-  height: 37.5px;
-  z-index: 10;
-}
-.cobertura:after,
-.cobertura:before {
-  background: #ece7e3;
-  border-radius: 300px;
-  content: "";
-  position: absolute;
-  width: 15px;
-  height: 30px;
-}
-.cobertura:after {
-  top: 20px;
-  right: 42.85714286px;
-}
-.cobertura:before {
-  top: 30px;
-  right: 27.27272727px;
-}
-/* ============================================== BIZCOCHO
-*/
-.bizcocho {
-  background: #6d3826;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  margin-left: -75px;
-  width: 150px;
-  height: 100px;
-}
-.bizcocho:after,
-.bizcocho:before {
-  background: rgba(236, 231, 227, 0.6);
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 15px;
-}
-.bizcocho:after {
-  top: 30%;
-  left: 0;
-}
-.bizcocho:before {
-  top: 60%;
-  left: 0;
-}
-
-/* ============================================== Album
-*/
-.album-photo {
-  display: none;
-  position: absolute;
-  width: 300px; /* looks like landscape photo */
-  height: auto;
-  border: 5px solid white;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.album-photo:hover {
-  transform: scale(1.05) rotate(0deg);
-  z-index: 10;
-}
-
-/* Left side */
-.album-left-1 { top: 30px; left: 50px; transform: rotate(-5deg); }
-.album-left-2 { top: 205px; left: 70px; transform: rotate(4deg); }
-
-/* Right side */
-.album-right-1 { top: 30px; right: 50px; transform: rotate(5deg); }
-.album-right-2 { top: 205px; right: 70px; transform: rotate(-4deg); }
-
-
-/* ============================================== TEXT
-*/
-h1,
-p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-style: italic;
-  text-align: center;
-  width: 100%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.profile-img {
-  position: absolute; /* relative to .cake */
-  bottom: 30px;  /* 10px below cake */
-  right: -170px;  /* 70px to the right of cake */
-  width: 150px;
-  height: 150px;
-  border: 5px solid white;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  border-radius: 10px;
-}
-
-</style>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15182f">
+  <meta name="description" content="Một câu chuyện Chibi dịu dàng và lời chúc sinh nhật ý nghĩa nhất dành cho Yến Nhi (10/09/2004).">
+  <meta property="og:title" content="Đóa Hoa Dành Cho Yến Nhi · 10/09/2004">
+  <meta property="og:description" content="Có những đóa hoa không nở rực rỡ ngay từ đầu. Chúng cần sự kiên nhẫn, một người thật lòng ở lại và đúng cách yêu thương.">
+  <meta property="og:image" content="assets/images/story/chibi-birthday.jpg">
+  <title>Đóa Hoa Dành Cho Yến Nhi · 10/09/2004 🌸</title>
+  
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Full Google Fonts with Vietnamese subset -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Caveat:wght@500;600;700&family=Comfortaa:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/story.css">
 </head>
-
 <body>
-	<div class="loading"></div>
-  <img src="assets/images/photo1.jpg" class="album-photo album-left-1">
-  <img src="assets/images/photo2.jpg" class="album-photo album-left-2">
-  <img src="assets/images/photo3.jpg" class="album-photo album-right-1">
-  <img src="assets/images/photo4.jpg" class="album-photo album-right-2">
+  <!-- Canvas Confetti Overlay -->
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
 
-  <!-- Hint image -->
-  <img src="assets/images/can-zoom.png" class="can-zoom">
+  <!-- Reading Progress Bar -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
 
-	<audio class="song" controls loop>
-        <source src="assets/audio/hbd.mp3"></source>
-	   Your browser isn't invited for super fun audio time.
-    </audio>
-    <div class="balloons text-center" id="b1">
-    	<h2 style="color:#F2B300;">H</h2>
+  <!-- Ambient Sky & Falling Petals Layer -->
+  <div class="ambient-sky" aria-hidden="true">
+    <div class="stars-bg"></div>
+    <div class="fireflies">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
     </div>
-    <div class="balloons text-center" id="b2">
-    	<h2 style="color:#0719D4;">B</h2>
-    </div>
-	<div class="balloons text-center" id="b3">
-    	<h2 style="color:#D14D39;">D</h2>
-    </div>
-	<div class="balloons text-center" id="b4">
-    	<h2 style="color:#8FAD00;">B</h2>
-    </div>
-	<div class="balloons text-center" id="b5">
-    	<h2 style="color:#8377E4;">A</h2>
-    </div>
-    <div class="balloons text-center" id="b6">
-    	<h2 style="color:#99C96A;">B</h2>
-    </div>
-    <div class="balloons text-center" id="b7">
-    	<h2 style="color:#20CFB4;">Y</h2>
-    </div>
-
-    <img src="assets/images/Balloon-Border.png" width="100%" class="balloon-border">
- 
-
-	<div class="container">
-		
-		<div class="row">
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_yellow"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_red"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_blue"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_green"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_pink"></div>
-			</div>
-			<div class="col-md-2 col-xs-2 bulb-holder">
-				<div class="bulb" id="bulb_orange"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<img src="assets/images/banner.png" class="bannar">
-			</div>
-		</div>
-		<!-- <div class="row message">
-			<div class="col-md-12"><p>Khushbu</p></div>
-		</div> -->
-		<div class="row cake-cover">
-			<div class="col-md-12 texr-center">
-				<div class="cake">
-				  <div class="velas">
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				    <div class="fuego"></div>
-				  </div>
-				  <div class="cobertura"></div>
-          <img src="assets/images/person.png" class="profile-img">
-				  <div class="bizcocho"></div>
-				</div>
-			</div>
-		</div>
-		<div class="row message">
-			<div class="col-md-12">
-				<p>Today is...</p>
-				<p>as beautiful as other days</p>
-				<p>but you realize</p>
-				<p>another year has gone</p>
-				<p>in a blink of the eyes</p>
-				<p><strong>however</strong></p>
-				<p>Do you know..?</p>
-				<p>today is just special</p>
-				<p>so special to you</p>
-				<p>that's why</p>
-				<p>Let's make it...</p>
-				<p>the best celebration ever</p>
-				<p>and let me share...</p>
-				<p>a piece of happiness to you</p>
-				<p>I made all this...</p>
-				<p>as a birthday present to you</p>
-				<p>I'm glad we met on zzz</p>
-				<p>thanks for the friendship we made</p>
-				<p>thanks for everything</p>
-				<p>I wish you all the best</p>
-				<p>May your life be at ease</p>
-				<p>May all your wishes come true</p>
-				<p>Remember</p>
-				<p>your ambitions</p>
-				<p>you live as a free bird...</p>
-				<p>flying in the blue sky</p>
-				<p>Now things are different...</p>
-				<p>real story of your life</p>
-				<p>is just about to begin</p>
-				<p>indeed..</p>
-				<p>but...</p>
-				<p>don't worry</p>
-				<p>because...</p>
-				<p>God has your back</p>
-				<p>and</p>
-				<p>this year will be better</p>
-				<p>and I hope</p>
-				<p>you'll find...</p>
-				<p>happiness along the way</p>
-				<p>keep your spirit up</p>
-				<p>enjoy every single moment...</p>
-				<p>that you experience today</p>
-				<p>fill it with your most beautiful smile</p>
-				<p>and make it the best memory..</p>
-				<p>lastly...</p>
-				<p>I'd like to wish you one more time</p>
-				<p>a very happy birthday babyy ❤️</p>
-			</div>
-		</div>
-		<div class="navbar navbar-fixed-bottom">
-			<div class="row">
-				<div class="col-md-6 text-center col-md-offset-3">
-					<button class="btn btn-primary" id="turn_on">Turn On Lights</button>
-					<button class="btn btn-primary" id="play">Play the Music Buddy</button>
-					<button class="btn btn-primary" id="bannar_coming">Let's Decorate</button>
-					<button class="btn btn-primary" id="balloons_flying">Calm, i got you some baloons</button>
-					<button class="btn btn-primary" id="cake_fadein">Cake? of course!</button>
-					<button class="btn btn-primary" id="light_candle">Don't forget to Light the Candle</button>
-					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
-					<button class="btn btn-primary" id="story">A mesage for you</button>
-					<!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
-				</div>
-			</div>
-			<!-- <div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div>
-			<div class="col-md-2">
-			</div> -->
-		</div>
-
-
-	</div>
-  <div class="lightbox" id="lightbox">
-    <img src="" alt="zoomed photo">
+    <div class="ambient-petals" id="ambientPetals"></div>
   </div>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="js/effect.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8SQ2H9J48M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-8SQ2H9J48M');
-</script>
+  <!-- Decorative Light Bulbs Garland (Classic Shizu-ka Feature) -->
+  <div class="bulb-garland" id="bulbGarland" aria-hidden="true">
+    <div class="bulb-wire"></div>
+    <div class="bulb-row">
+      <div class="bulb-item"><div class="bulb" id="bulb_yellow"></div></div>
+      <div class="bulb-item"><div class="bulb" id="bulb_red"></div></div>
+      <div class="bulb-item"><div class="bulb" id="bulb_blue"></div></div>
+      <div class="bulb-item"><div class="bulb" id="bulb_green"></div></div>
+      <div class="bulb-item"><div class="bulb" id="bulb_pink"></div></div>
+      <div class="bulb-item"><div class="bulb" id="bulb_orange"></div></div>
+      <div class="bulb-item"><div class="bulb" id="bulb_yellow_2"></div></div>
+      <div class="bulb-item"><div class="bulb" id="bulb_pink_2"></div></div>
+    </div>
+  </div>
+
+  <!-- Floating Action Control Bar -->
+  <nav class="action-dock" aria-label="Điều khiển tương tác">
+    <button class="dock-btn" id="dockLights" type="button" aria-pressed="false" title="Bật / Tắt dàn đèn lung linh">
+      <span class="dock-btn__icon">💡</span>
+      <span class="dock-btn__text">Bật đèn</span>
+    </button>
+    <button class="dock-btn" id="dockMusic" type="button" aria-pressed="false" title="Bật / Tắt giai điệu sinh nhật">
+      <span class="dock-btn__icon dock-btn__icon--music">🎵</span>
+      <span class="dock-btn__text">Bật nhạc</span>
+    </button>
+    <button class="dock-btn" id="dockBalloons" type="button" title="Thả bóng bay chữ Yến Nhi">
+      <span class="dock-btn__icon">🎈</span>
+      <span class="dock-btn__text">Bóng bay</span>
+    </button>
+    <a class="dock-btn dock-btn--cake" href="#birthdayZone" title="Đi tới Bánh sinh nhật & Bức thư">
+      <span class="dock-btn__icon">🎂</span>
+      <span class="dock-btn__text">Bánh kem</span>
+    </a>
+  </nav>
+
+  <!-- Audio Player Element -->
+  <audio id="birthdaySong" loop preload="auto">
+    <source src="assets/audio/hbd.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Container for Floating Balloons -->
+  <div class="balloons-container" id="balloonsContainer" aria-hidden="true"></div>
+
+  <!-- HERO SECTION -->
+  <header class="hero" id="top">
+    <div class="hero__backdrop" aria-hidden="true">
+      <img src="assets/images/story/garden-night.png" alt="Khu vườn Chibi dưới ánh trăng dịu êm" class="hero__image">
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__badge reveal">
+        <span class="badge-sparkle">✦</span>
+        <span>Sinh nhật ngày 10 · 09 · 2004</span>
+        <span class="badge-sparkle">✦</span>
+      </div>
+      
+      <p class="hero__subtitle reveal">Một câu chuyện nhỏ được viết riêng cho</p>
+      <h1 class="hero__title reveal">Yến Nhi</h1>
+      
+      <p class="hero__desc reveal">
+        Có những đóa hoa không nở rực rỡ ngay từ đầu.<br>
+        Không phải vì chúng kém đẹp — chỉ là chúng cần đúng người, đúng cách yêu thương, và một mùa thật dịu dàng.
+      </p>
+
+      <div class="hero__actions reveal">
+        <a class="cta-button" href="#prologue">
+          <span>Khám phá câu chuyện Chibi</span>
+          <span class="cta-arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__hint" aria-hidden="true">
+      <span class="hint-dot"></span>
+      <span>Cuộn xuống thật chậm để lắng nghe nhé</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- PROLOGUE: THE QUOTE -->
+    <section class="prologue section" id="prologue" aria-labelledby="prologueHeading">
+      <div class="container container--narrow">
+        <div class="quote-card reveal">
+          <div class="quote-card__header">
+            <span class="quote-icon" aria-hidden="true">❝</span>
+            <span class="quote-tag">Lời tâm sự của Yến Nhi</span>
+          </div>
+          <blockquote class="quote-card__body">
+            <p>
+              “Some flowers do not bloom brightly at the beginning. They need time, patience, and someone who truly wants to stay and take care of them. People are the same. Some hearts have been hurt before, so they become quiet and careful. They are not easy to open their hearts again.
+            </p>
+            <p>
+              They do not need someone who only says sweet words. They need someone who can understand their silence, someone gentle enough not to scare them, and someone honest enough to stay even when things are not good yet...
+            </p>
+            <p>
+              Beautiful love is not when everything is easy. It is when someone stays with you even when you are not perfect. It is when they do not rush you to bloom, but walk with you through your broken days.
+            </p>
+            <p>
+              Because in the end, everyone will bloom... they just need the right person, and the right kind of love.”
+            </p>
+          </blockquote>
+          <div class="quote-card__footer">
+            <span class="quote-author">— Yến Nhi</span>
+          </div>
+        </div>
+
+        <div class="prologue-note reveal">
+          <p>
+            Anh đã đọc từng dòng em gửi. Và chính từ những suy nghĩ trong veo nhưng chất chứa nhiều nỗi niềm ấy, câu chuyện nhỏ này được vẽ nên — như một lời hồi đáp dịu dàng nhất gửi đến em.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTERS STORYBOOK SECTION -->
+    <section class="storybook-section section" id="storyChapters" aria-label="Các chương truyện Chibi">
+      <div class="container">
+        <div class="section-heading text-center reveal">
+          <span class="sub-heading">Hành trình dịu êm</span>
+          <h2 class="main-heading">Đóa Hoa Không Vội Nở</h2>
+          <div class="heading-ornament" aria-hidden="true">❀ ❀ ❀</div>
+        </div>
+
+        <div class="chapters-wrapper">
+          <!-- CHAPTER 1 -->
+          <article class="chapter-card reveal" id="chap1">
+            <div class="chapter-card__art">
+              <img src="assets/images/story/garden-night.png" alt="Chibi Yến Nhi ngồi bên đóa hoa trong lồng kính dưới đêm trăng" loading="lazy">
+              <div class="chapter-tag">Chương 01</div>
+            </div>
+            <div class="chapter-card__text">
+              <div class="chapter-badge">Trái tim cẩn trọng</div>
+              <h3 class="chapter-title">Tiếng Lặng Thầm Của Nụ Hoa</h3>
+              
+              <div class="speech-bubble speech-bubble--her">
+                <span class="speech-avatar" aria-hidden="true">🍃</span>
+                <p>“Em muốn nói nhiều lắm nhưng lại chẳng thể cất thành lời nổi…”</p>
+              </div>
+
+              <p>
+                Người ta thường ngỡ im lặng là khoảng cách. Nhưng anh biết, đôi khi im lặng là nơi một người cất giữ những vết xước cũ chưa kịp lành, những âu lo và nỗi sợ làm tổn thương người khác.
+              </p>
+              <p>
+                Một nụ hoa từng chịu sương gió sẽ luôn co mình cẩn thận trong lồng kính. Em không cần phải xin lỗi hay cảm thấy áy náy vì chưa thể nói ra, bởi sự im lặng của em luôn xứng đáng được bảo vệ và nâng niu.
+              </p>
+            </div>
+          </article>
+
+          <!-- CHAPTER 2 -->
+          <article class="chapter-card chapter-card--reverse reveal" id="chap2">
+            <div class="chapter-card__art">
+              <img src="assets/images/story/chibi-rain.jpg" alt="Chibi bạn nam che ô cho bạn nữ ngồi bên đóa hoa dưới làn mưa ấm áp" loading="lazy">
+              <div class="chapter-tag">Chương 02</div>
+            </div>
+            <div class="chapter-card__text">
+              <div class="chapter-badge">Sự kiên nhẫn chân thành</div>
+              <h3 class="chapter-title">Chiếc Ô Nghiêng Dưới Mưa</h3>
+              
+              <p>
+                Thương một người không phải là kéo tay người ấy chạy vội ra nắng khi người ấy vẫn đang run rẩy vì lạnh. Thương là khi trời đổ mưa giông, có người lặng lẽ bước đến, nghiêng chiếc ô về phía em và ngồi lại thật êm đềm.
+              </p>
+              <p>
+                Anh không đến đây để hỏi bao giờ em mới mở lòng. Anh chỉ muốn là một khoảng trời bình yên, nơi em có thể thở phào trút bỏ lớp áo giáp gai góc mà không sợ bị phán xét.
+              </p>
+              <div class="chapter-highlight">
+                <span>✦ Sự kiên nhẫn đẹp nhất là sự kiên nhẫn không kèm theo điều kiện.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CHAPTER 3 -->
+          <article class="chapter-card reveal" id="chap3">
+            <div class="chapter-card__inner-confession">
+              <div class="chapter-tag">Chương 03</div>
+              <div class="chapter-badge">Lắng nghe & Thấu hiểu</div>
+              <h3 class="chapter-title">Em Không Có Lỗi Vì “Chưa Thể”</h3>
+              
+              <div class="speech-bubble speech-bubble--her">
+                <span class="speech-avatar" aria-hidden="true">🥀</span>
+                <p>“Anh rất tốt, hiện tại là vậy !. Em cảm nhận được điều đó mà. Nhưng mà em không thể, cái gì cũng vậy…”</p>
+              </div>
+
+              <div class="confession-response">
+                <div class="speech-bubble speech-bubble--him">
+                  <span class="speech-avatar" aria-hidden="true">🌱</span>
+                  <p>
+                    Yến Nhi à, anh trân trọng sự chân thành này của em hơn bất cứ điều gì. Em không cần phải gượng ép, cũng không bao giờ nợ anh bất cứ một lời hứa hay một sự đền đáp nào.
+                  </p>
+                </div>
+                <p class="confession-body">
+                  Sự tử tế của anh dành cho em xuất phát từ việc anh quý mến con người em, chứ không phải một “chiến lược” để đổi lấy tình cảm. Ranh giới của em, nỗi sợ của em, sự ngập ngừng của em — tất cả đều hợp lý và cần được tôn trọng trọn vẹn. Hãy cứ là em, tự nhiên và an yên nhất.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- CHAPTER 4 (INTERACTIVE GARDEN) -->
+          <article class="chapter-card chapter-card--garden reveal" id="gardenZone">
+            <div class="chapter-tag">Chương 04</div>
+            <div class="chapter-badge">Khoảnh khắc bung nở</div>
+            <h3 class="chapter-title">Khi Đóa Hoa Tự Chọn Nở</h3>
+            <p class="garden-subtitle">
+              Chạm vào bình tưới bên dưới để gửi gắm từng điều ước tưới mát tâm hồn em:
+            </p>
+
+            <div class="garden-interactive" id="interactiveGarden" style="--bloom: 0">
+              <div class="garden-visual">
+                <img class="garden-img garden-img--night" src="assets/images/story/garden-night.png" alt="Hoa chưa nở trong đêm">
+                <img class="garden-img garden-img--dawn" src="assets/images/story/garden-dawn.png" alt="Hoa bừng nở trong bình minh">
+                <div class="garden-bloom-glow"></div>
+                <div class="garden-badge-pill">
+                  <span id="wishCount">0</span> / 4 Điều Ước
+                </div>
+                <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+              </div>
+
+              <div class="garden-control-box">
+                <div class="wish-card-display" id="wishDisplay" role="status">
+                  <span class="wish-icon" id="wishIcon">💧</span>
+                  <p id="wishText">Hãy chạm vào chiếc bình tưới nhỏ để bắt đầu tưới hoa nhé...</p>
+                </div>
+
+                <div class="wish-indicators" id="wishDots" aria-hidden="true">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+
+                <button class="water-action-btn" id="waterButton" type="button">
+                  <span class="water-icon" aria-hidden="true">🫗</span>
+                  <span class="water-label">Tưới một điều ước</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- CHAPTER 5 -->
+          <article class="chapter-card chapter-card--reverse reveal" id="chap5">
+            <div class="chapter-card__art">
+              <img src="assets/images/story/chibi-birthday.jpg" alt="Chibi bạn nam và bạn nữ mừng sinh nhật bên chiếc bánh kem và bóng bay" loading="lazy">
+              <div class="chapter-tag">Chương 05</div>
+            </div>
+            <div class="chapter-card__text">
+              <div class="chapter-badge">Ngày đặc biệt 10 · 09</div>
+              <h3 class="chapter-title">Mùa Hoa Rực Rỡ Tuổi 22</h3>
+              <p>
+                Hoa không nở vì bị hối thúc, mà vì nắng đã đủ ấm và đất đã đủ lành. Hôm nay là ngày sinh nhật của Yến Nhi — ngày mà một đóa hoa xinh đẹp bước sang tuổi mới với trọn vẹn tự do và can đảm.
+              </p>
+              <p>
+                Không cần biết ngày mai ra sao, khoảnh khắc hiện tại này là để chúc mừng sự hiện diện của em trên cuộc đời này. Chúc cho nụ cười của em luôn rạng rỡ như ánh bình minh bên hồ!
+              </p>
+              <a href="#birthdayZone" class="btn-jump-cake">
+                <span>Đến tiệc sinh nhật & thổi nến nào! 🎂</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIRTHDAY CELEBRATION ZONE (SHIZU-KA INSPIRED CAKE & CANDLE BLOW) -->
+    <section class="birthday-celebration section" id="birthdayZone" aria-labelledby="bdayHeading">
+      <div class="container container--narrow">
+        <div class="birthday-header text-center reveal">
+          <div class="bday-confetti-badge">🎉 10 · 09 · 2004 🎉</div>
+          <h2 id="bdayHeading" class="bday-main-title">
+            Chúc Mừng Sinh Nhật,<br><span class="highlight-name">Yến Nhi!</span>
+          </h2>
+          <p class="bday-lead">
+            Mong tuổi mới mang đến cho em thật nhiều sự bình an, những đêm ngủ ngon giấc và một trái tim luôn được bao bọc trong sự dịu dàng.
+          </p>
+        </div>
+
+        <!-- 3D Interactive Birthday Cake -->
+        <div class="cake-stage reveal" id="cakeStage">
+          <div class="cake-box">
+            <div class="cake" id="interactiveCake" title="Chạm để thổi nến!">
+              <!-- Candle Flames & Sticks -->
+              <div class="velas" id="cakeCandles">
+                <div class="fuego"><span class="flame-core"></span></div>
+                <div class="fuego"><span class="flame-core"></span></div>
+                <div class="fuego"><span class="flame-core"></span></div>
+              </div>
+              <div class="cobertura"></div>
+              <div class="cake-layer-top">
+                <div class="strawberries">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="bizcocho">
+                <div class="cake-plate"></div>
+                <div class="cake-date-ribbon">10 · 09 · 2004</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cake-actions text-center">
+            <button class="blow-candle-btn" id="blowCandleBtn" type="button">
+              <span class="btn-icon">🕯️</span>
+              <span class="btn-text">Thổi nến sinh nhật</span>
+            </button>
+            <p class="blow-hint" id="blowHint">Chạm vào nút hoặc chiếc bánh để thổi tắt ngọn nến nhé!</p>
+          </div>
+
+          <!-- Toast Message that pops up when candles are blown -->
+          <div class="birthday-toast" id="birthdayToast" aria-hidden="true">
+            <div class="toast-card">
+              <span class="toast-emoji">✨🎂🎈</span>
+              <h3>Happy Birthday Yến Nhi!</h3>
+              <p>Ngọn nến đã tắt, điều ước của em đã được gửi tới những vì sao! Chúc mọi ước nguyện tuổi mới thành hiện thực!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Special Wish Cards -->
+        <div class="wishes-quad reveal">
+          <div class="wish-item-card">
+            <span class="wish-item-card__icon">🌤️</span>
+            <h4>Bình Yên</h4>
+            <p>Chúc những ngày trong lòng em luôn nhiều nắng hơn mây giông, và đêm về luôn có một giấc ngủ thật êm đềm.</p>
+          </div>
+          <div class="wish-item-card">
+            <span class="wish-item-card__icon">🪴</span>
+            <h4>Can Đảm</h4>
+            <p>Chúc em đủ dũng khí để sống đúng với cảm xúc của mình, không phải gượng gạo hay cố làm hài lòng ai khác.</p>
+          </div>
+          <div class="wish-item-card">
+            <span class="wish-item-card__icon">🤍</span>
+            <h4>Dịu Dàng</h4>
+            <p>Chúc em luôn được bao bọc bởi những người chân thành, biết lắng nghe sự im lặng và tôn trọng ranh giới của em.</p>
+          </div>
+          <div class="wish-item-card">
+            <span class="wish-item-card__icon">✨</span>
+            <h4>Tự Do Nở Hoa</h4>
+            <p>Chúc em luôn hạnh phúc và kiêu hãnh với từng lựa chọn của chính mình, nở rộ vào mùa mà em mong muốn.</p>
+          </div>
+        </div>
+
+        <!-- Interactive Star Wish Button -->
+        <div class="star-wishes-box text-center reveal">
+          <button class="star-wish-btn" id="starWishBtn" type="button">
+            <span class="star-icon">⭐</span>
+            <span>Thắp một ngôi sao may mắn cho Yến Nhi</span>
+          </button>
+          <div class="star-spawn-area" id="starSpawnArea" aria-hidden="true"></div>
+        </div>
+
+        <!-- THE SEALED WAX LETTER -->
+        <div class="letter-section reveal" id="letterSection">
+          <div class="envelope" id="waxEnvelope">
+            <div class="envelope__flap"></div>
+            <div class="envelope__seal" id="envelopeSeal" title="Chạm để mở thư">
+              <span class="seal-initials">YN</span>
+              <span class="seal-ring"></span>
+            </div>
+            <div class="envelope__hint">Chạm vào con dấu để mở lá thư anh gửi riêng em 💌</div>
+            
+            <article class="letter-paper" id="letterPaper">
+              <div class="letter-paper__decor">❀</div>
+              <p class="letter-salutation">Gửi Yến Nhi,</p>
+              
+              <div class="letter-body">
+                <p>
+                  Hôm nay là ngày 10 tháng 9 — ngày mà thế giới này may mắn có thêm một cô gái mang tên Yến Nhi dịu dàng, sâu sắc và đầy trăn trở.
+                </p>
+                <p>
+                  Anh đã đọc rất kỹ những dòng em viết về đóa hoa cần thời gian và một người đủ kiên nhẫn. Và anh cũng nghe trọn vẹn cả câu nói: <em>“Anh rất tốt... nhưng em không thể. Em muốn nói nhiều lắm nhưng lại chẳng thể cất thành lời nổi.”</em>
+                </p>
+                <p>
+                  Điều anh muốn em luôn nhớ là: <strong>Em không làm gì sai cả</strong>. Em không cần phải cảm thấy có lỗi với bất kỳ ai, và càng không bao giờ phải như thế trước mặt anh.
+                </p>
+                <p>
+                  Sự im lặng của em, anh hiểu là vì trái tim em đã từng phải tự mình gánh chịu những điều không dễ dàng. Khi một đóa hoa đã từng sợ gió lạnh, việc khép cánh lại để tự bảo vệ là điều rất tự nhiên. Em không cần phải gượng ép bản thân phải "mở lòng", cũng không cần cảm thấy áp lực trước sự tử tế của anh.
+                </p>
+                <p>
+                  Anh chọn ở đây, chọn đối xử dịu dàng với em, đơn giản vì em xứng đáng với sự tử tế ấy. Anh chưa từng xem sự chân thành của mình là một món nợ bắt em phải đáp lại. Tình cảm đẹp nhất là khi người ta sẵn lòng che ô cho em qua những ngày mưa bão, mà không đòi hỏi phải được cùng em đón ngày nắng.
+                </p>
+                <p>
+                  Bước sang tuổi mới (10/09/2004), anh chỉ mong:
+                  <br>• Lòng em nhẹ nhõm hơn, bớt đi những nghĩ suy dồn nén.
+                  <br>• Em luôn được an toàn trong cảm xúc của mình.
+                  <br>• Và một ngày nào đó, khi lòng em thực sự bình yên, đóa hoa Yến Nhi sẽ tự tin nở rộ theo cách rực rỡ nhất mà em tự chọn.
+                </p>
+              </div>
+
+              <div class="letter-signoff">
+                <p>Chúc mừng sinh nhật em một tuổi mới thật an lành!</p>
+                <p class="letter-author">Từ một người luôn trân trọng em 🌸</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EPILOGUE -->
+    <footer class="epilogue section text-center" aria-label="Lời kết">
+      <div class="container container--narrow reveal">
+        <div class="epilogue-symbol" aria-hidden="true">❀</div>
+        <p class="epilogue-text">
+          “Bởi vì sau cùng, ai rồi cũng sẽ nở hoa…<br>
+          chỉ cần đúng người, và đúng cách yêu thương.”
+        </p>
+        <p class="epilogue-credit">Dành riêng cho Yến Nhi · Sinh nhật ngày 10/09/2004</p>
+        <a class="back-to-top" href="#top">Trở về đầu trang ↑</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/story.js" defer></script>
+</body>
 </html>
