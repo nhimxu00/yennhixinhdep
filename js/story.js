@@ -1,5 +1,5 @@
 /**
- * ĐÓA HOA DÀNH CHO YẾN NHI · 10/09/2004
+ * ĐÓA HOA DÀNH CHO YẾN NHI · 10/09/2026
  * Interactive Chibi Storybook & Birthday Celebration JS
  */
 
@@ -430,6 +430,9 @@
   const toggleEnvelope = () => {
     if (!waxEnvelope) return;
     const isOpened = waxEnvelope.classList.toggle("is-opened");
+    envelopeSeal?.setAttribute("aria-expanded", String(isOpened));
+    const paper = document.getElementById("letterPaper");
+    if (paper) paper.inert = !isOpened;
     if (isOpened) {
       launchConfetti(50, window.innerWidth / 2, window.innerHeight * 0.7);
       playBirthdayChime();
@@ -443,6 +446,7 @@
     e.stopPropagation();
     toggleEnvelope();
   });
-  waxEnvelope?.addEventListener("click", toggleEnvelope);
+  const birthdayPaper = document.getElementById("letterPaper");
+  if (birthdayPaper) birthdayPaper.inert = true;
 
 })();

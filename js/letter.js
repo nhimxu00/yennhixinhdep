@@ -1,21 +1,10 @@
 (() => {
-  const progress = document.getElementById('progress');
-  let scheduled = false;
-  function updateProgress() {
-    const available = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = `${available > 0 ? Math.min(100, window.scrollY / available * 100) : 0}%`;
-    scheduled = false;
-  }
-  window.addEventListener('scroll', () => {
-    if (!scheduled) { scheduled = true; window.requestAnimationFrame(updateProgress); }
-  }, { passive: true });
-  window.addEventListener('resize', updateProgress);
-  window.addEventListener('load', updateProgress);
-  updateProgress();
+  'use strict';
   const paper = document.getElementById('letter-paper');
   const content = document.getElementById('letter-content');
   const invitation = document.getElementById('envelope-invitation');
   const openButton = document.getElementById('open-letter');
+  const letterHashes = ['#thu', '#letter-title'];
 
   function openLetter() {
     content.hidden = false;
@@ -23,10 +12,10 @@
     paper.classList.remove('is-sealed');
     paper.classList.add('is-open');
     openButton.setAttribute('aria-expanded', 'true');
-    updateProgress();
+    window.dispatchEvent(new Event('moment:opened'));
   }
 
-  if (window.location.hash !== '#thu' && window.location.hash !== '#letter-title') {
+  if (!letterHashes.includes(location.hash)) {
     content.hidden = true;
     invitation.hidden = false;
     paper.classList.add('is-sealed');
@@ -40,30 +29,15 @@
   document.querySelectorAll('a[href="#thu"], a[href="#letter-title"]').forEach(link => {
     link.addEventListener('click', openLetter);
   });
-  window.addEventListener('hashchange', () => {
-    if (window.location.hash === '#thu' || window.location.hash === '#letter-title') openLetter();
+  addEventListener('hashchange', () => {
+    if (letterHashes.includes(location.hash)) openLetter();
   });
-
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.letter-aside, .memory-heading, .photo-grid figure, .journey > h2, .timeline > *, .closing h2').forEach(element => {
-      element.classList.add('reveal-pending');
-      observer.observe(element);
-    });
-  }
 
   const button = document.getElementById('hold-hand');
   const message = document.getElementById('comfort-message');
   const words = [
     'Anh nắm tay em rồi. Em không phải đi qua hôm nay một mình đâu.',
-    'Mệt thì mình nghỉ một chút. Anh vẫn ở đây, cùng em.',
+    'Mệt thì mình nghỉ một chút. Minh vẫn ở đây, cùng em.',
     'Em không cần cố mạnh mẽ. Với anh, em cứ là em thôi.',
     'Một cái nắm tay thật ấm. Mong lòng em nhẹ hơn một chút.',
     'Không cần vội trả lời. Anh chỉ muốn em biết rằng anh thương em.'
@@ -73,6 +47,6 @@
     message.textContent = words[count % words.length];
     count += 1;
     button.classList.add('held');
-    button.innerHTML = '<span aria-hidden="true">♡</span> Anh đang nắm tay em đây';
+    button.innerHTML = '<span aria-hidden="true">♡</span> Minh đang nắm tay em đây';
   });
 })();
