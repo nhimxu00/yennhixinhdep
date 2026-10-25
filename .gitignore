@@ -5,3 +5,7 @@
 .qa/
 qa-*.png
 preview-*.png
+
+# Local browser preview artifacts
+.playwright-cli/
+output/playwright/
