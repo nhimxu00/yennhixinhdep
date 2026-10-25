@@ -165,3 +165,43 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold-warm); out
   *, *::before, *::after { animation: none !important; transition: none !important; }
   [data-reveal].reveal-ready, .reveal { opacity: 1; transform: none; }
 }
+
+/* A quiet, shared soundtrack, with an explicit play button. */
+:root {
+  --font-letter: 'Mali', 'Be Vietnam Pro', cursive;
+  --font-letter-sign: 'Dancing Script', 'Caveat', cursive;
+}
+.moment-music-dock { position: fixed; right: 20px; bottom: 22px; z-index: 600; padding: 7px; border: 1px solid #ffb5c540; background: #15182fe8; backdrop-filter: blur(16px); border-radius: var(--radius-pill); box-shadow: 0 8px 30px #0003; }
+.music-button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: var(--radius-pill); padding: 11px 16px; background: transparent; color: #fce5ef; font: 500 11px var(--font-main); white-space: nowrap; cursor: pointer; }
+.music-button:hover { background: #ffffff12; }
+.music-button:disabled { cursor: wait; opacity: .65; }
+.music-bars { display: inline-flex; align-items: center; gap: 3px; height: 17px; }
+.music-bars i { display: block; width: 2px; height: 6px; border-radius: 2px; background: var(--blush-pink); }
+.music-bars i:nth-child(2) { height: 14px; }
+.music-bars i:nth-child(3) { height: 9px; }
+.music-playing .music-bars i { animation: music-wave 1s ease-in-out infinite alternate; }
+.music-playing .music-bars i:nth-child(2) { animation-delay: -.4s; }
+.music-playing .music-bars i:nth-child(3) { animation-delay: -.7s; }
+@keyframes music-wave { to { transform: scaleY(.35); } }
+.sender-hand { font-family: var(--font-letter-sign); }
+.birthday-page .letter-body { font-family: var(--font-letter); font-size: 17px; line-height: 2.15; letter-spacing: .1px; }
+.birthday-page .letter-salutation { font: 600 36px/1.5 var(--font-letter-sign); color: #b35f81; }
+.birthday-page .letter-author .sender-hand { font-family: var(--font-letter-sign); font-size: 49px; }
+@media (max-width: 560px) {
+  .moment-music-dock { right: 12px; bottom: 12px; }
+  .music-button { font-size: 10px; padding: 10px 14px; }
+  .birthday-page .letter-body { font-size: 16px; line-height: 2.1; }
+  .birthday-page .letter-salutation { font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { .music-playing .music-bars i { animation: none; } }
+@media print { .moment-music-dock { display: none; } }
+
+/* The dated navigation closes both moments with the same layout. */
+.moment-return { background: var(--night-800); color: #fff; text-align: center; }
+.moment-return h2 { font: 600 25px/1.7 var(--font-cute); margin: 20px 0; }
+.moment-return .back-to-top { margin-top: 35px; font-size: 12px; }
+@media (max-width: 560px) {
+  .moment-return { padding: 50px 22px; }
+  .moment-return h2 { font-size: 23px; }
+  .moment-return .memory-kicker { font-size: 7px; letter-spacing: 1px; }
+}
