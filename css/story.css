@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ĐÓA HOA DÀNH CHO YẾN NHI · 10/09/2004
+   ĐÓA HOA DÀNH CHO YẾN NHI · 10/09/2026
    Interactive Chibi Storybook & Birthday Celebration CSS
    ========================================================================== */
 
@@ -1531,25 +1531,4 @@ body.lights-on .bulb#bulb_orange {
   .bulb-item:nth-child(8) {
     display: none;
   }
-}
-.new-letter-link {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 28px 16px 0;
-  padding: 16px 24px;
-  border: 1px solid rgba(255, 221, 204, .4);
-  border-radius: 14px;
-  color: #ffe6d8;
-  background: rgba(28, 25, 44, .6);
-  text-decoration: none;
-  backdrop-filter: blur(8px);
-}
-.new-letter-link > span { font-size: 11px; letter-spacing: .6px; }
-.new-letter-link strong { font-size: 14px; font-weight: 500; }
-.new-letter-link:hover, .new-letter-link:focus-visible {
-  color: #fff;
-  border-color: #ffe6d8;
-  background: rgba(99, 65, 80, .75);
-  text-decoration: none;
 }
